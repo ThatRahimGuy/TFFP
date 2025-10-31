@@ -7,9 +7,18 @@
             "id": "9a39601b-b0b0-48f2-beac-112fdfef10c4",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "LightAttack",
                     "type": "Button",
                     "id": "e3de16c4-b27d-4a37-8dd1-bb725fea5d7a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Button",
+                    "id": "443071d8-22f8-4411-94df-4243f813867e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -169,39 +178,89 @@
                 },
                 {
                     "name": "",
-                    "id": "a73dc836-2273-431d-8642-b4cad0445988",
-                    "path": "<XInputController>/buttonSouth",
+                    "id": "f939ac20-ff06-44c8-83d8-db5071ddce68",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "7952c0c9-7fdd-4533-97d3-a760eea2c41c",
-                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "id": "83d788ad-e018-4313-b020-c1fc0bded1b6",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Jump",
+                    "groups": ";Mouse and Keyboard",
+                    "action": "LightAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1c0125cf-8d81-4d3e-b423-349967521337",
-                    "path": "<DualShockGamepad>/buttonSouth",
+                    "id": "028559b6-3545-4100-a623-9f7d2b3229e2",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Jump",
+                    "groups": ";Gamepad",
+                    "action": "LightAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ff360511-91bb-4149-bb9f-22edb534cc8b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse and Keyboard",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2e7936b-32a7-44ec-b284-a7c6feed6023",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "HeavyAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Mouse and Keyboard",
+            "bindingGroup": "Mouse and Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Pointer>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
