@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(PlayerInput))]
 public class Movement : MonoBehaviour
 {
     private float horizontal;
@@ -14,36 +13,32 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    [SerializeField] private PlayerInput playerInput;
-    private InputAction lightAttack;
-    private InputAction heavyAttack;
-    private InputAction move;
-    private InputAction jump;
+    private PlayerController PlayerController;
 
     [SerializeField] Vector2 _moveDirection;
 
     private void Awake()
     {
-        var actions = playerInput.actions;
-
-        lightAttack = actions.FindAction("LightAttack");
-        heavyAttack = actions.FindAction("HeavyAttack");
-        move = actions.FindAction("Move");
-        jump = actions.FindAction("Jump");
+        PlayerController ??= new PlayerController();
     }
+   
     private void OnEnable()
     {
-        lightAttack.performed += OnLightAttack;
-        heavyAttack.performed += OnHeavyAttack;
-        move.performed += OnMove;
-        jump.performed += OnJump;
+        PlayerController.Player.Enable();
+
+        PlayerController.Player.LightAttack.performed += OnLightAttack;
+        PlayerController.Player.HeavyAttack.performed += OnHeavyAttack;
+        PlayerController.Player.Move.performed += OnMove;
+        PlayerController.Player.Jump.performed += OnJump;
     }
     private void OnDisable()
     {
-        lightAttack.performed -= OnLightAttack;
-        heavyAttack.performed -= OnHeavyAttack;
-        move.performed -= OnMove;
-        jump.performed -= OnJump;
+        PlayerController.Player.LightAttack.performed -= OnLightAttack;
+        PlayerController.Player.HeavyAttack.performed -= OnHeavyAttack;
+        PlayerController.Player.Move.performed -= OnMove;
+        PlayerController.Player.Jump.performed -= OnJump;
+
+        PlayerController.Player.Disable();
     }
 
     void OnLightAttack(InputAction.CallbackContext context)

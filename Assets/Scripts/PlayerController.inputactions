@@ -3,7 +3,7 @@
     "name": "PlayerController",
     "maps": [
         {
-            "name": "Land",
+            "name": "Player",
             "id": "9a39601b-b0b0-48f2-beac-112fdfef10c4",
             "actions": [
                 {
