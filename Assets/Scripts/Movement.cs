@@ -1,14 +1,16 @@
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    private float horizontal;
-    private float speed = 8f;
+    private float horizontalInput;
+    private float moveSpeed = 8f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
+    private bool isJumping = false;
 
-
+   
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -17,6 +19,10 @@ public class Movement : MonoBehaviour
 
     [SerializeField] Vector2 _moveDirection;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Awake()
     {
         PlayerController ??= new PlayerController();
@@ -64,12 +70,19 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
 
+        if (Input.GetButtonDown("Jump")!! || (isJumping))
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+            isJumping = true;
+        }
+ 
     }
 
     void FixedUpdate()
     {
-        //rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
     }
 
     private bool IsGrounded()
@@ -79,7 +92,7 @@ public class Movement : MonoBehaviour
     
     private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || isFacingRight && horizontal > 0f)
+        if (isFacingRight && horizontalInput < 0f || isFacingRight && horizontalInput > 0f)
         {
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale; 
@@ -88,4 +101,11 @@ public class Movement : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isJumping = false;
+    }
+
+
 }
