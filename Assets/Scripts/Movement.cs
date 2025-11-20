@@ -72,7 +72,7 @@ public class Movement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump")!! || (isJumping))
+        //if (Input.GetButtonDown("Jump")!! || (isJumping))
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             isJumping = true;
