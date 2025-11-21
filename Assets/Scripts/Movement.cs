@@ -1,4 +1,5 @@
 using Unity.Properties;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     private float horizontalInput;
     private float moveSpeed = 8f;
-    private float jumpingPower = 0f;
+    private float jumpingPower = 8f;
     private bool isFacingRight = true;
     private bool isJumping = false;
 
@@ -73,11 +74,11 @@ public class Movement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         //if (Input.GetButtonDown("Jump")!! || (isJumping))
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-            isJumping = true;
-        }
- 
+        //{
+        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+        //isJumping = true;     // causing player to levitate
+        //}
+
     }
 
     void FixedUpdate()
