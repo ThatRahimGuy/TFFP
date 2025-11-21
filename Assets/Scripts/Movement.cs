@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     private float horizontalInput;
     private float moveSpeed = 8f;
-    private float jumpingPower = 16f;
+    private float jumpingPower = 0f;
     private bool isFacingRight = true;
     private bool isJumping = false;
 
