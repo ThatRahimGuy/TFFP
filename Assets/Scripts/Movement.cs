@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour, IDamageable
 {
     private float horizontalInput;
     private float moveSpeed = 8f;
@@ -11,15 +11,32 @@ public class Movement : MonoBehaviour
     private bool isFacingRight = true;
     private bool isJumping = false;
 
-   
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] Transform _hitPosition;
+    [SerializeField] int _damage = 1;
+    [SerializeField] LayerMask _detectMask;
 
     private PlayerController PlayerController;
 
     [SerializeField] Vector2 _moveDirection;
 
+    public int Health { get; set; }
+    public int InitialHealth { get; set; }
+
+    public void Punch()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(_hitPosition.position, Vector2.one, 0f, Vector2.right, 1f, _detectMask);
+
+        Debug.Log("Player Punched");
+        
+        if(hit.collider!= null)
+        {
+            hit.collider.GetComponent<IDamageable>().TakeDamage(_damage);
+        }
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,11 +45,10 @@ public class Movement : MonoBehaviour
     {
         PlayerController ??= new PlayerController();
     }
-   
+
     private void OnEnable()
     {
         PlayerController.Player.Enable();
-
         PlayerController.Player.LightAttack.performed += OnLightAttack;
         PlayerController.Player.HeavyAttack.performed += OnHeavyAttack;
         PlayerController.Player.Move.performed += OnMove;
@@ -51,11 +67,13 @@ public class Movement : MonoBehaviour
     void OnLightAttack(InputAction.CallbackContext context)
     {
         print("Light Attack");
+        Punch();
     }
 
     void OnHeavyAttack(InputAction.CallbackContext context)
     {
         print("Heavy Attack");
+        Punch();
 
     }
     void OnMove(InputAction.CallbackContext context)
@@ -90,13 +108,13 @@ public class Movement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-    
+
     private void Flip()
     {
         if (isFacingRight && horizontalInput < 0f || isFacingRight && horizontalInput > 0f)
         {
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale; 
+            Vector3 localScale = transform.localScale;
             localScale.x *= 1f;
             transform.localScale = localScale;
         }
@@ -108,5 +126,28 @@ public class Movement : MonoBehaviour
         isJumping = false;
     }
 
+    public void TakeDamage(int amount)
+    {
+        Health -= amount;
+    }
 
+    public void HealDamage(int amount)
+    {
+        Health += amount;
+    }
+
+    public void ResetHealth()
+    {
+        Health = InitialHealth;
+    }
+
+    public void SetHealth(int amount)
+    {
+        Health = amount;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(_hitPosition.position, Vector2.one);
+    }
 }
