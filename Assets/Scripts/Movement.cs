@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour, IDamageable
 {
     private float horizontalInput;
     private float moveSpeed = 8f;
-    private float jumpingPower = 8f;
+    [SerializeField] float jumpingPower = 8f;
     private bool isFacingRight = true;
     private bool isJumping = false;
 
@@ -37,6 +37,19 @@ public class Movement : MonoBehaviour, IDamageable
             hit.collider.GetComponent<IDamageable>().TakeDamage(_damage);
         }
     }
+
+    void Jump()
+    {
+        if(IsGrounded())
+        {
+            print("Was Grounded: Jump");
+            rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
+        }
+        else
+        {
+            print("Not Grounded: Cry");
+        }
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,6 +65,8 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.LightAttack.performed += OnLightAttack;
         PlayerController.Player.HeavyAttack.performed += OnHeavyAttack;
         PlayerController.Player.Move.performed += OnMove;
+        PlayerController.Player.Move.canceled += OnMove;
+
         PlayerController.Player.Jump.performed += OnJump;
     }
     private void OnDisable()
@@ -59,6 +74,8 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.LightAttack.performed -= OnLightAttack;
         PlayerController.Player.HeavyAttack.performed -= OnHeavyAttack;
         PlayerController.Player.Move.performed -= OnMove;
+        PlayerController.Player.Move.canceled -= OnMove;
+
         PlayerController.Player.Jump.performed -= OnJump;
 
         PlayerController.Player.Disable();
@@ -84,24 +101,13 @@ public class Movement : MonoBehaviour, IDamageable
     }
     void OnJump(InputAction.CallbackContext context)
     {
+        Jump();
         print("Jumped!");
-    }
-
-    private void Update()
-    {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        //if (Input.GetButtonDown("Jump")!! || (isJumping))
-        //{
-        //rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-        //isJumping = true;     // causing player to levitate
-        //}
-
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, rb.linearVelocity.y);
     }
 
     private bool IsGrounded()
