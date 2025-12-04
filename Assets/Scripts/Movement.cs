@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour, IDamageable
 {
     private float horizontalInput;
+    private float verticalInput;
     private float moveSpeed = 8f;
-    [SerializeField] float jumpingPower = 8f;
+    [SerializeField] float jumpingPower = 4f;
     private bool isFacingRight = true;
     private bool isJumping = false;
+    Animator animator;
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -57,6 +59,7 @@ public class Movement : MonoBehaviour, IDamageable
     private void Awake()
     {
         PlayerController ??= new PlayerController();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -108,23 +111,13 @@ public class Movement : MonoBehaviour, IDamageable
     void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, rb.linearVelocity.y);
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput != 0 ? horizontalInput : verticalInput));
     }
 
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
-    private void Flip()
-    {
-        if (isFacingRight && horizontalInput < 0f || isFacingRight && horizontalInput > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= 1f;
-            transform.localScale = localScale;
-        }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -155,5 +148,16 @@ public class Movement : MonoBehaviour, IDamageable
     void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(_hitPosition.position, Vector2.one);
+    }
+    private void Flip()
+    {
+        if (isFacingRight && horizontalInput < 0f || isFacingRight && horizontalInput > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= 1f;
+            transform.localScale = localScale;
+        }
+
     }
 }
