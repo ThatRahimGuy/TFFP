@@ -2,6 +2,7 @@ using Unity.Properties;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FirstGearGames.SmoothCameraShaker;
 
 public class Movement : MonoBehaviour, IDamageable
 {
@@ -10,6 +11,8 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] float jumpingPower = 4f;
     private bool isFacingRight = true;
     private bool isJumping = false;
+    // private bool isPunching = false;
+    public ShakeData punchshake;
     Animator animator;
     SpriteRenderer spriteRenderer;
 
@@ -97,6 +100,8 @@ public class Movement : MonoBehaviour, IDamageable
     {
         print("Light Attack");
         Punch();
+        animator.SetBool("isPunching", true);
+        CameraShakerHandler.Shake(punchshake);
     }
 
     void OnHeavyAttack(InputAction.CallbackContext context)
