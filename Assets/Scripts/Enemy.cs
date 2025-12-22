@@ -1,3 +1,4 @@
+using FirstGearGames.SmoothCameraShaker;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -6,6 +7,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public GameObject player;
     public float speed;
     private float distance;
+    public ShakeData enemydeathshake;
     public int Health { get; set; }
     public int InitialHealth { get; set; }
 
@@ -16,6 +18,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if(Health < 0)
         {
            Destroy(gameObject);
+           CameraShakerHandler.Shake(enemydeathshake);
         }
         DebugHealth();
     }

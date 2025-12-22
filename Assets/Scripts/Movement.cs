@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] float jumpingPower = 4f;
     private bool isFacingRight = true;
     private bool isJumping = false;
-    // private bool isPunching = false;
+    private bool isPunching = false;
     public ShakeData punchshake;
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -38,17 +38,19 @@ public class Movement : MonoBehaviour, IDamageable
         RaycastHit2D hit = Physics2D.BoxCast(_hitPosition.position, Vector2.one, 0f, Vector2.right, 1f, _detectMask);
 
         Debug.Log("Player Punched");
-        
-        if(hit.collider!= null)
+
+        if (hit.collider != null)
         {
             hit.collider.GetComponent<IDamageable>().TakeDamage(_damage);
+            animator.SetBool("isPunching", true);
         }
     }
 
     //jump code stuff
     void Jump()
     {
-        if(IsGrounded())
+        animator.SetBool("isPunching", false);
+        if (IsGrounded())
         {
             print("Grounded: Jump");
             rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
@@ -59,7 +61,6 @@ public class Movement : MonoBehaviour, IDamageable
             print("Not Grounded: Cry");
         }
     }
-    //they rigid on my body till I 2D
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
