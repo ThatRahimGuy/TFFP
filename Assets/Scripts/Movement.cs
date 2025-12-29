@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FirstGearGames.SmoothCameraShaker;
+using System.Collections;
 
 public class Movement : MonoBehaviour, IDamageable
 {
@@ -12,9 +13,15 @@ public class Movement : MonoBehaviour, IDamageable
     private bool isFacingRight = true;
     private bool isJumping = false;
     private bool isPunching = false;
+    public float dashPower = 20f;
+    public float dashTime = 0.1f;
+    public float dashCooldown = 0.1f;
+    private bool isDashing;
+    private bool canDash = true;
     public ShakeData punchshake;
     Animator animator;
     SpriteRenderer spriteRenderer;
+   
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -23,10 +30,12 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] Transform _hitPosition;
     [SerializeField] int _damage = 1;
     [SerializeField] LayerMask _detectMask;
+    [SerializeField] private TrailRenderer tr;
 
     private PlayerController PlayerController;
 
     [SerializeField] Vector2 _moveDirection;
+    private object context;
 
     //health code
     public int Health { get; set; }
@@ -46,9 +55,27 @@ public class Movement : MonoBehaviour, IDamageable
         }
     }
 
+    private void TriggerDash()
+    {
+        if (isDashing)
+        {
+            return;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash()); 
+        }
+    }
+    
     //jump code stuff
     void Jump()
     {
+        if (isDashing)
+        {
+            return;
+        }
+        
         animator.SetBool("isPunching", false);
         if (IsGrounded())
         {
@@ -64,6 +91,7 @@ public class Movement : MonoBehaviour, IDamageable
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     //doohickey
@@ -82,6 +110,8 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.HeavyAttack.performed += OnHeavyAttack;
         PlayerController.Player.Move.performed += OnMove;
         PlayerController.Player.Move.canceled += OnMove;
+        PlayerController.Player.Move.performed += OnDash;
+        PlayerController.Player.Move.canceled += OnDash;
 
         PlayerController.Player.Jump.performed += OnJump;
     }
@@ -91,6 +121,8 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.HeavyAttack.performed -= OnHeavyAttack;
         PlayerController.Player.Move.performed -= OnMove;
         PlayerController.Player.Move.canceled -= OnMove;
+        PlayerController.Player.Move.performed -= OnDash;
+        PlayerController.Player.Move.canceled -= OnDash;
 
         PlayerController.Player.Jump.performed -= OnJump;
 
@@ -122,16 +154,27 @@ public class Movement : MonoBehaviour, IDamageable
         Jump();
         print("Jumped!");
     }
+    void OnDash (InputAction.CallbackContext context)
+    {
+        Dash();
+        print("Dashed");
+    }
 
     //fixed update stuff
     void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+        
         _moveDirection = input * moveSpeed;
         rb.linearVelocity = new Vector2(_moveDirection.x, rb.linearVelocity.y);
 
         animator.SetFloat("Speed", Mathf.Abs(input.x != 0 ? input.x : input.y));
         Flip();
     }
+
 
     //touching groundy
     private bool IsGrounded()
@@ -182,5 +225,22 @@ public class Movement : MonoBehaviour, IDamageable
             spriteRenderer.flipX = !isFacingRight;
             _hitPosition.localPosition = _hitPosition.localPosition * new Vector2(-1, 1);
         }
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashTime);
+        tr.emitting = false;
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true; 
+
     }
 }
