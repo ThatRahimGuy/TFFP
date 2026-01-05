@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] int _damage = 1;
     [SerializeField] LayerMask _detectMask;
     [SerializeField] private TrailRenderer tr;
-
+    [SerializeField] int health = 9;
     private PlayerController PlayerController;
 
     [SerializeField] Vector2 _moveDirection;
@@ -40,6 +40,8 @@ public class Movement : MonoBehaviour, IDamageable
     //health code
     public int Health { get; set; }
     public int InitialHealth { get; set; }
+
+
 
     //punch code stuff(yay)
     public void Punch()

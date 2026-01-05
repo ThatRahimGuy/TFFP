@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public int Health { get; set; }
     public int InitialHealth { get; set; }
 
+    [SerializeField] int health = 3;
+
     public void TakeDamage(int amount)
     {
         Health -= amount;
