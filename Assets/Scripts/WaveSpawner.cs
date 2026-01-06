@@ -8,7 +8,7 @@ public class WaveSpawner : MonoBehaviour
     int waveCount = 1;
     public float spawnrate = 1.0f;
     public float timeBetweenWaves = 3.0f;
-
+    
     public int enemyCount;
     
 
@@ -22,6 +22,11 @@ public class WaveSpawner : MonoBehaviour
         {
             StartCoroutine(waveSpawner());
         }
+    }
+
+    public void WaveDone()
+    {
+        waveIsDone = true;
     }
 
     IEnumerator waveSpawner()

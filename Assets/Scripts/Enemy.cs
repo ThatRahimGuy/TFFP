@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     public GameObject player;
     public float speed;
+    public WaveSpawner waveSpawner;
+    public float enemieskilled = 0;
     private float distance;
     public ShakeData enemydeathshake;
     public int Health { get; set; }
@@ -19,6 +21,7 @@ public class Enemy : MonoBehaviour, IDamageable
         
         if(Health < 0)
         {
+            enemieskilled += 1;
            Destroy(gameObject);
            CameraShakerHandler.Shake(enemydeathshake);
         }
@@ -56,6 +59,11 @@ public class Enemy : MonoBehaviour, IDamageable
         if(distance < 5)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+
+        if (enemieskilled == 5)
+        {
+            waveSpawner.WaveDone();
         }
     }
 }

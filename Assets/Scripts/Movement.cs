@@ -13,11 +13,13 @@ public class Movement : MonoBehaviour, IDamageable
     private bool isFacingRight = true;
     private bool isJumping = false;
     private bool isPunching = false;
+    private bool isGameOverScreen = false;
     public float dashPower = 20f;
     public float dashTime = 0.1f;
     public float dashCooldown = 0.1f;
     private bool isDashing;
     private bool canDash = true;
+    public GameObject gameover;
     public ShakeData punchshake;
     Animator animator;
     SpriteRenderer spriteRenderer;
@@ -57,6 +59,18 @@ public class Movement : MonoBehaviour, IDamageable
         }
     }
 
+    void Update()
+    {
+        if (isGameOverScreen == false)
+        {
+            gameover.SetActive(false);
+        }
+        else
+        {
+            gameover.SetActive(true);
+        }
+    }
+
     private void TriggerDash()
     {
         if (isDashing)
@@ -93,7 +107,7 @@ public class Movement : MonoBehaviour, IDamageable
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        isGameOverScreen = false;
     }
 
     //doohickey

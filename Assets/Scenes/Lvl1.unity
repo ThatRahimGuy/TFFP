@@ -325,9 +325,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveCountText: {fileID: 154668580}
-  spawnrate: 2
-  timeBetweenWaves: 100
-  enemyCount: 1
+  spawnrate: 0.5
+  timeBetweenWaves: 20
+  enemyCount: 5
   enemy: {fileID: 649588501}
 --- !u!1 &165335911
 GameObject:
@@ -1106,7 +1106,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2053900465}
   speed: 2
+  waveSpawner: {fileID: 154668582}
+  enemieskilled: 0
   enemydeathshake: {fileID: 11400000, guid: 10de23da347675f4eaf61c82de5f1529, type: 2}
+  health: 3
 --- !u!1 &821877382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1192,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 821877385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 165335913}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: RestartButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &821877385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,7 +1356,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1152641040}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 165335913}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: ExitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1152641040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,6 +2303,7 @@ MonoBehaviour:
   dashPower: 20
   dashTime: 0.1
   dashCooldown: 0.1
+  gameover: {fileID: 1351575815}
   punchshake: {fileID: 11400000, guid: e47a5589d1b1a5749b7ffdb09970a3fb, type: 2}
   rb: {fileID: 2053900467}
   groundCheck: {fileID: 942344041}
@@ -2288,6 +2316,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   tr: {fileID: 2053900475}
+  health: 9
   _moveDirection: {x: 0, y: 0}
 --- !u!212 &2053900469
 SpriteRenderer:
