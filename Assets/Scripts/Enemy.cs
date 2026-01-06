@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour, IDamageable
         
         if(Health < 0)
         {
-            enemieskilled += 1;
+           enemieskilled += 1;
            Destroy(gameObject);
            CameraShakerHandler.Shake(enemydeathshake);
         }
