@@ -14,14 +14,23 @@ public class Enemy : MonoBehaviour, IDamageable
     public int InitialHealth { get; set; }
 
     [SerializeField] int health = 3;
+    private WaveSpawner spawner;
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<Movement>().gameObject;
+        spawner = FindAnyObjectByType<WaveSpawner>();
+    }
+
 
     public void TakeDamage(int amount)
     {
-        Health -= amount;
+        health -= amount;
         
-        if(Health < 0)
+        if(health <= 0)
         {
            enemieskilled += 1;
+            spawner.EnemyKilled();
            Destroy(gameObject);
            CameraShakerHandler.Shake(enemydeathshake);
         }
@@ -55,15 +64,15 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
-        
-        if(distance < 5)
-        {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        }
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        //if (distance < 5)
+        //{
+        //    transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        //}
 
-        if (enemieskilled == 5)
-        {
-            waveSpawner.WaveDone();
-        }
+        //if (enemieskilled == 5)
+        //{
+        //    waveSpawner.WaveDone();
+        //}
     }
 }
