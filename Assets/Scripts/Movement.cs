@@ -23,7 +23,8 @@ public class Movement : MonoBehaviour, IDamageable
     public ShakeData punchshake;
     Animator animator;
     SpriteRenderer spriteRenderer;
-   
+    private AudioSource source;
+    public AudioClip impactSound;
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -35,6 +36,7 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] private TrailRenderer tr;
     [SerializeField] int health = 9;
     private PlayerController PlayerController;
+
 
     [SerializeField] Vector2 _moveDirection;
     private object context;
@@ -56,6 +58,7 @@ public class Movement : MonoBehaviour, IDamageable
         {
             hit.collider.GetComponent<IDamageable>().TakeDamage(_damage);
             animator.SetBool("isPunching", true);
+            source.PlayOneShot(impactSound, 1.0f);
         }
     }
 
@@ -108,7 +111,9 @@ public class Movement : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         isGameOverScreen = false;
+        source = GetComponent<AudioSource>();
     }
+
 
     //doohickey
     private void Awake()

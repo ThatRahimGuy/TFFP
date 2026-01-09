@@ -2284,6 +2284,7 @@ MonoBehaviour:
   dashCooldown: 0.1
   gameover: {fileID: 1351575815}
   punchshake: {fileID: 11400000, guid: e47a5589d1b1a5749b7ffdb09970a3fb, type: 2}
+  impactSound: {fileID: 8300000, guid: 66c85d83e4f7e9a45a5e6bcbabc3ea9a, type: 3}
   rb: {fileID: 2053900467}
   groundCheck: {fileID: 942344041}
   groundLayer:

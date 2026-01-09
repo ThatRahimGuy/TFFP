@@ -10,24 +10,18 @@ public class Buttons : MonoBehaviour
 
     public Slider musicSlider;
     public Slider sfxSlider;
-    private void Start()
-    {
-        LoadVolume();
-        MusicManager.Instance.PlayMusic("MainMenuMusic");
-    }
-    public void Play()
-    {
-        MusicManager.Instance.PlayMusic("MainMenuMusic");
-    }
+  
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.instance.UiSFX();
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit!");
-        Application.Quit(); 
+        Application.Quit();
+        AudioManager.instance.UiSFX();
     }
 
     public void UpdateMusicVolume(float volume)
