@@ -1,16 +1,48 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    [SerializeField] AudioSource UISource;
-    [SerializeField] List<AudioClip> uiClips = new List<AudioClip> ();
+    public static AudioManager Instance;
 
-    public void UiSFX()
+    [SerializeField] private Sound[] sounds;
+
+    private void Awake()
     {
-        AudioClip clip = uiClips[0];
+        Instance = this;  
 
-        UISource.Play();
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.audioClip;
+            s.source.loop = s.isLoop;
+            s.source.volume = s.volume;
+
+            if (s.playOnAwake)
+                s.source.Play();
+        }
+    }
+
+    public void Play(string clipname)
+    {
+        Sound s = Array.Find(sounds, dummySound => dummySound.clipName == clipname);
+        if (s == null)
+        {
+            Debug.LogError("Sound: " + clipname + " does NOT exist!");
+            return;
+        }
+        s.source.Play();
+    }
+
+    public void Stop(string clipname)
+    {
+        Sound s = Array.Find(sounds, dummySound => dummySound.clipName == clipname);
+        if (s == null)
+        {
+            Debug.LogError("Sound: " + clipname + " does NOT exist!");
+            return;
+        }
+        s.source.Stop();
     }
 }
