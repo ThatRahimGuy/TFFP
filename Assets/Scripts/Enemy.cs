@@ -12,7 +12,9 @@ public class Enemy : MonoBehaviour, IDamageable
     public ShakeData enemydeathshake;
     public int Health { get; set; }
     public int InitialHealth { get; set; }
+    public Movement playerHealth;
 
+    [SerializeField] int _damage = 1;
     [SerializeField] int health = 3;
     private WaveSpawner spawner;
 
@@ -20,6 +22,14 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         player = FindAnyObjectByType<Movement>().gameObject;
         spawner = FindAnyObjectByType<WaveSpawner>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "OrkaKnight")
+        {
+            playerHealth.TakeDamage(1);
+        }
     }
 
 
