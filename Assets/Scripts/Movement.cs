@@ -213,7 +213,11 @@ public class Movement : MonoBehaviour, IDamageable
     //IDamageable
     public void TakeDamage(int amount)
     {
-        Health -= amount;
+        health -= amount;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void HealDamage(int amount)
