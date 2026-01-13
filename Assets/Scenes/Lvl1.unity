@@ -1897,7 +1897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1049746438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2677,8 +2677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3e2440c1513804d9977c8891098652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarSlider: {fileID: 0}
-  healthBarValueText: {fileID: 0}
+  healthBarSlider: {fileID: 1978969610}
+  healthBarValueText: {fileID: 1607802055}
   maxHealth: 0
   currentHealth: 0
 --- !u!1 &1544070546
@@ -3834,9 +3834,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 865013922}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 0
-  m_Value: 100
+  m_MaxValue: 9
+  m_WholeNumbers: 1
+  m_Value: 9
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3982,9 +3982,9 @@ MonoBehaviour:
   dashPower: 20
   dashTime: 0.1
   dashCooldown: 0.1
-  gameover: {fileID: 1351575815}
   punchshake: {fileID: 11400000, guid: e47a5589d1b1a5749b7ffdb09970a3fb, type: 2}
-  impactSound: {fileID: 8300000, guid: 66c85d83e4f7e9a45a5e6bcbabc3ea9a, type: 3}
+  impactSound: {fileID: 0}
+  gameOver: {fileID: 1351575815}
   rb: {fileID: 2053900467}
   groundCheck: {fileID: 942344041}
   groundLayer:
@@ -3997,6 +3997,7 @@ MonoBehaviour:
     m_Bits: 64
   tr: {fileID: 2053900475}
   health: 9
+  healthSlider: {fileID: 1978969610}
   _moveDirection: {x: 0, y: 0}
 --- !u!212 &2053900469
 SpriteRenderer:

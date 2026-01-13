@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using FirstGearGames.SmoothCameraShaker;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour, IDamageable
 {
@@ -19,12 +20,12 @@ public class Movement : MonoBehaviour, IDamageable
     public float dashCooldown = 0.1f;
     private bool isDashing;
     private bool canDash = true;
-    public GameObject gameover;
     public ShakeData punchshake;
     Animator animator;
     SpriteRenderer spriteRenderer;
     private AudioSource source;
     public AudioClip impactSound;
+    public GameObject gameOver;
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -35,6 +36,7 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] LayerMask _detectMask;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] int health = 9;
+    [SerializeField] Slider healthSlider;
     private PlayerController PlayerController;
 
 
@@ -64,14 +66,7 @@ public class Movement : MonoBehaviour, IDamageable
 
     void Update()
     {
-        if (isGameOverScreen == false)
-        {
-            gameover.SetActive(false);
-        }
-        else
-        {
-            gameover.SetActive(true);
-        }
+        
     }
 
     private void TriggerDash()
@@ -81,10 +76,10 @@ public class Movement : MonoBehaviour, IDamageable
             return;
         }
         
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
-        {
-            StartCoroutine(Dash()); 
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        //{
+        //    StartCoroutine(Dash()); 
+        //}
     }
     
     //jump code stuff
@@ -111,6 +106,7 @@ public class Movement : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         isGameOverScreen = false;
+        gameOver.SetActive(false);
         source = GetComponent<AudioSource>();
     }
 
@@ -131,8 +127,8 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.HeavyAttack.performed += OnHeavyAttack;
         PlayerController.Player.Move.performed += OnMove;
         PlayerController.Player.Move.canceled += OnMove;
-        PlayerController.Player.Move.performed += OnDash;
-        PlayerController.Player.Move.canceled += OnDash;
+        PlayerController.Player.Dash.performed += OnDash;
+        PlayerController.Player.Dash.canceled += OnDash;
 
         PlayerController.Player.Jump.performed += OnJump;
     }
@@ -142,8 +138,8 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.HeavyAttack.performed -= OnHeavyAttack;
         PlayerController.Player.Move.performed -= OnMove;
         PlayerController.Player.Move.canceled -= OnMove;
-        PlayerController.Player.Move.performed -= OnDash;
-        PlayerController.Player.Move.canceled -= OnDash;
+        PlayerController.Player.Dash.performed -= OnDash;
+        PlayerController.Player.Dash.canceled -= OnDash;
 
         PlayerController.Player.Jump.performed -= OnJump;
 
@@ -177,7 +173,7 @@ public class Movement : MonoBehaviour, IDamageable
     }
     void OnDash (InputAction.CallbackContext context)
     {
-        Dash();
+       StartCoroutine(Dash());
         print("Dashed");
     }
 
@@ -208,15 +204,24 @@ public class Movement : MonoBehaviour, IDamageable
     {
         isJumping = false;
         animator.SetBool("IsJumping", false);
+
+        //if (collision.gameObject.CompareTag("Enemy"))
+        //{
+        //    health -= 1;
+        //    healthSlider.value = health;    
+        //}
     }
 
     //IDamageable
     public void TakeDamage(int amount)
     {
         health -= amount;
+        healthSlider.value = health;
         if (health <= 0)
         {
+            gameOver.SetActive(true);
             Destroy(gameObject);
+            
         }
     }
 

@@ -14,14 +14,14 @@ public class Buttons : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        AudioManager.instance.UiSFX();
+        //AudioManager.instance.UiSFX();
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit!");
         Application.Quit();
-        AudioManager.instance.UiSFX();
+       // AudioManager.instance.UiSFX();
     }
 
     public void UpdateMusicVolume(float volume)

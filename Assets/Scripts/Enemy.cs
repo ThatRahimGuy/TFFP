@@ -28,7 +28,8 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if(collision.gameObject.name == "OrkaKnight")
         {
-            playerHealth.TakeDamage(1);
+            player.GetComponent<Movement>().TakeDamage(1);
+            Debug.Log("Hello");
         }
     }
 
