@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3923279647144497416}
   m_Layer: 6
   m_Name: Enemy(bill)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   waveSpawner: {fileID: 0}
   enemieskilled: 0
   enemydeathshake: {fileID: 11400000, guid: 10de23da347675f4eaf61c82de5f1529, type: 2}
+  playerHealth: {fileID: 0}
+  _damage: 1
   health: 3
 --- !u!50 &7266531667605043784
 Rigidbody2D:

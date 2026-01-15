@@ -12,14 +12,14 @@ public class healthBar : MonoBehaviour
     public int currentHealth;
     void Start()
     {
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     void Update()
     {
-        healthBarValueText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+        //healthBarValueText.text = currentHealth.ToString() + "/" + maxHealth.ToString();
 
-        healthBarSlider.value = currentHealth;
-        healthBarSlider.maxValue = maxHealth;
+        //healthBarSlider.value = currentHealth;
+        //healthBarSlider.maxValue = maxHealth;
     }
 }
