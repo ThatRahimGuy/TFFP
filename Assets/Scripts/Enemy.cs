@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "OrkaKnight")
+        if(collision.collider.CompareTag("Player"))
         {
             player.GetComponent<Movement>().TakeDamage(1);
             Debug.Log("Hello");

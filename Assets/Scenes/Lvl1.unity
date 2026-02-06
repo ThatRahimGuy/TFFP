@@ -1012,7 +1012,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000014804966, y: 0.000000014672456, z: 2.1722521e-16, w: 1}
-  m_LocalPosition: {x: -0.17000008, y: -1.9100001, z: -10}
+  m_LocalPosition: {x: -6.48, y: -1.9100001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3402,12 +3402,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackerSettings:
-    BindingMode: 4
+    BindingMode: 3
     PositionDamping: {x: 1, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 6.31, y: 3.01, z: -10}
+  FollowOffset: {x: 0, y: 3.01, z: -10}
 --- !u!114 &1754186596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3460,7 +3460,7 @@ Transform:
   m_GameObject: {fileID: 1754186594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.17000008, y: -1.9100001, z: -10}
+  m_LocalPosition: {x: -6.48, y: -1.9100001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4066,7 +4066,6 @@ GameObject:
   - component: {fileID: 2053900468}
   - component: {fileID: 2053900467}
   - component: {fileID: 2053900471}
-  - component: {fileID: 2053900472}
   - component: {fileID: 2053900473}
   - component: {fileID: 2053900474}
   - component: {fileID: 2053900475}
@@ -4241,18 +4240,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2053900472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053900465}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c567c414a4e6794c97a224235c3416a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &2053900473
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

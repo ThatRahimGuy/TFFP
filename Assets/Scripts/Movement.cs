@@ -225,18 +225,20 @@ public class Movement : MonoBehaviour, IDamageable
         {
             gameOver.SetActive(true);
             Destroy(gameObject);
-            
+
+            healthSlider.value = 0;
         }
     }
 
     public void HealDamage(int amount)
     {
         health += amount;
-        // if (health > 9)
-        // {
-        //     health = 9;
-        // }
-    healthBarSlider.updateHealthBar
+
+        if (health >= InitialHealth)
+        {
+            health = InitialHealth;
+        }
+        healthSlider.value = health;
     }
 
 
