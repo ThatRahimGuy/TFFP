@@ -230,10 +230,11 @@ public class Movement : MonoBehaviour, IDamageable
     public void HealDamage(int amount)
     {
         health += amount;
-        if(health <= 0) 
+        if (health <= 0)
         {
             health = 9;
         }
+    }
 
 
     public void ResetHealth()
