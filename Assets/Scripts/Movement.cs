@@ -104,10 +104,12 @@ public class Movement : MonoBehaviour, IDamageable
     }
     private void Start()
     {
+       ResetHealth();
         rb = GetComponent<Rigidbody2D>();
         isGameOverScreen = false;
         gameOver.SetActive(false);
         source = GetComponent<AudioSource>();
+        healthitem.OnHealthCollect += HealDamage;
     }
 
 
@@ -227,12 +229,17 @@ public class Movement : MonoBehaviour, IDamageable
 
     public void HealDamage(int amount)
     {
-        Health += amount;
-    }
+        health += amount;
+        if(health <= 0) 
+        {
+            health = 9;
+        }
+
 
     public void ResetHealth()
     {
-        Health = InitialHealth;
+        health = InitialHealth;
+
     }
 
     public void SetHealth(int amount)
