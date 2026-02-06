@@ -10,7 +10,12 @@ public class healthitem : MonoBehaviour
     public static event Action<int> OnHealthCollect;
     public void Collect()
     {
-        OnHealthCollect.Invoke(healAmount);
+        OnHealthCollect?.Invoke(healAmount);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player")) Collect();
     }
 }

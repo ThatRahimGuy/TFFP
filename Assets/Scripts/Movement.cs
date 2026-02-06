@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour, IDamageable
     private AudioSource source;
     public AudioClip impactSound;
     public GameObject gameOver;
+    public bool isHealed;
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -45,7 +46,7 @@ public class Movement : MonoBehaviour, IDamageable
 
     //health code
     public int Health { get; set; }
-    public int InitialHealth { get; set; }
+    public int InitialHealth;
 
 
 
@@ -66,7 +67,6 @@ public class Movement : MonoBehaviour, IDamageable
 
     void Update()
     {
-        
     }
 
     private void TriggerDash()
@@ -104,7 +104,7 @@ public class Movement : MonoBehaviour, IDamageable
     }
     private void Start()
     {
-       ResetHealth();
+        ResetHealth();
         rb = GetComponent<Rigidbody2D>();
         isGameOverScreen = false;
         gameOver.SetActive(false);
@@ -184,6 +184,8 @@ public class Movement : MonoBehaviour, IDamageable
     {
         if (isDashing)
         {
+      
+      
             return;
         }
         
@@ -230,10 +232,11 @@ public class Movement : MonoBehaviour, IDamageable
     public void HealDamage(int amount)
     {
         health += amount;
-        if (health <= 0)
-        {
-            health = 9;
-        }
+        // if (health > 9)
+        // {
+        //     health = 9;
+        // }
+    healthBarSlider.updateHealthBar
     }
 
 
@@ -271,7 +274,15 @@ public class Movement : MonoBehaviour, IDamageable
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0;
-        rb.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0f);
+         if(isFacingRight)
+        {
+            rb.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0f);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(-transform.localScale.x * dashPower, 0f);
+        }
+    
         tr.emitting = true;
         yield return new WaitForSeconds(dashTime);
         tr.emitting = false;
@@ -279,6 +290,5 @@ public class Movement : MonoBehaviour, IDamageable
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true; 
-
     }
 }

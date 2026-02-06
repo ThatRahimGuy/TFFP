@@ -4123,6 +4123,7 @@ MonoBehaviour:
   punchshake: {fileID: 11400000, guid: e47a5589d1b1a5749b7ffdb09970a3fb, type: 2}
   impactSound: {fileID: 0}
   gameOver: {fileID: 1351575815}
+  isHealed: 0
   rb: {fileID: 2053900467}
   groundCheck: {fileID: 942344041}
   groundLayer:
@@ -4137,6 +4138,7 @@ MonoBehaviour:
   health: 9
   healthSlider: {fileID: 1978969610}
   _moveDirection: {x: 0, y: 0}
+  InitialHealth: 9
 --- !u!212 &2053900469
 SpriteRenderer:
   m_ObjectHideFlags: 0
