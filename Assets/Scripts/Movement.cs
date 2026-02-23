@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class Movement : MonoBehaviour, IDamageable
 {
+    public float heavyPunchDelay;
     private Vector2 input;
     private float moveSpeed = 8f;
     [SerializeField] float jumpingPower = 4f;
@@ -39,6 +40,7 @@ public class Movement : MonoBehaviour, IDamageable
     [SerializeField] int health = 9;
     [SerializeField] Slider healthSlider;
     private PlayerController PlayerController;
+   
 
 
     [SerializeField] Vector2 _moveDirection;
@@ -48,7 +50,7 @@ public class Movement : MonoBehaviour, IDamageable
     public int Health { get; set; }
     public int InitialHealth;
 
-
+//yyutyutyutyutyt
 
     //punch code stuff(yay)
     public void Punch()
@@ -60,7 +62,7 @@ public class Movement : MonoBehaviour, IDamageable
         if (hit.collider != null)
         {
             hit.collider.GetComponent<IDamageable>().TakeDamage(_damage);
-            animator.SetBool("isPunching", true);
+            animator.SetTrigger("isPunching");
             source.PlayOneShot(impactSound, 1.0f);
         }
     }
@@ -90,7 +92,7 @@ public class Movement : MonoBehaviour, IDamageable
             return;
         }
         
-        animator.SetBool("isPunching", false);
+        animator.SetTrigger("IsPunching");
         if (IsGrounded())
         {
             print("Grounded: Jump");
@@ -151,16 +153,23 @@ public class Movement : MonoBehaviour, IDamageable
     void OnLightAttack(InputAction.CallbackContext context)
     {
         print("Light Attack");
+        _damage =  1;
         Punch();
-        animator.SetBool("isPunching", true);
+        animator.SetTrigger("IsPunching");
         CameraShakerHandler.Shake(punchshake);
     }
 
     void OnHeavyAttack(InputAction.CallbackContext context)
     {
         print("Heavy Attack");
-        Punch();
+        StartCoroutine(DelayHeavyAttack());
+    }
 
+    IEnumerator DelayHeavyAttack(){
+        yield return new WaitForSeconds(heavyPunchDelay);
+        animator.SetTrigger("IsPunching");
+        _damage = 3;
+        Punch();
     }
     void OnMove(InputAction.CallbackContext context)
     {
