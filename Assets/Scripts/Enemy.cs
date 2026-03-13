@@ -4,7 +4,7 @@ using UnityEngine.TextCore.Text;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    public GameObject player;
+    public Movement player;
     public float speed;
     public WaveSpawner waveSpawner;
     public float enemieskilled = 0;
@@ -17,11 +17,13 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] int _damage = 1;
     [SerializeField] int health = 3;
     private WaveSpawner spawner;
+    [SerializeField] private Rigidbody2D rb;
 
     private void Start()
     {
-        player = FindAnyObjectByType<Movement>().gameObject;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         spawner = FindAnyObjectByType<WaveSpawner>();
+        rb =  GetComponent<Rigidbody2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -37,11 +39,12 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(int amount)
     {
         health -= amount;
+        TakeKnockback(player.transform.position);
         
         if(health <= 0)
         {
            enemieskilled += 1;
-            spawner.EnemyKilled();
+           spawner.EnemyKilled();
            Destroy(gameObject);
            CameraShakerHandler.Shake(enemydeathshake);
         }
@@ -71,8 +74,14 @@ public class Enemy : MonoBehaviour, IDamageable
         Debug.Log($"Health = {Health}");
     }
 
+    public void TakeKnockback(Vector2 pos)
+    {
+        rb.AddForceAtPosition(player.isFacingRight? player.transform.right * 6.7f : player.transform.right * (-1 * 6.7f), pos, ForceMode2D.Impulse);
+    }
+
     void Update()
     {
+        if (!player) return;
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);

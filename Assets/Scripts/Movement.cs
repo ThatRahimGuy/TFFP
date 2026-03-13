@@ -1,5 +1,3 @@
-using Unity.Properties;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FirstGearGames.SmoothCameraShaker;
@@ -12,7 +10,7 @@ public class Movement : MonoBehaviour, IDamageable
     private Vector2 input;
     private float moveSpeed = 8f;
     [SerializeField] float jumpingPower = 4f;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
     private bool isJumping = false;
     private bool isPunching = false;
     private bool isGameOverScreen = false;
@@ -183,8 +181,8 @@ public class Movement : MonoBehaviour, IDamageable
         print("Jumped!");
     }
     void OnDash (InputAction.CallbackContext context)
-    {
-       StartCoroutine(Dash());
+    { 
+        if (canDash) StartCoroutine(Dash());
         print("Dashed");
     }
 
@@ -285,14 +283,8 @@ public class Movement : MonoBehaviour, IDamageable
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0;
-         if(isFacingRight)
-        {
-            rb.linearVelocity = new Vector2(transform.localScale.x * dashPower, 0f);
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(-transform.localScale.x * dashPower, 0f);
-        }
+         rb.linearVelocity = isFacingRight ? 
+             new Vector2(transform.localScale.x * dashPower, 0f) : new Vector2(-transform.localScale.x * dashPower, 0f);
     
         tr.emitting = true;
         yield return new WaitForSeconds(dashTime);
