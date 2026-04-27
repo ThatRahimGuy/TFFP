@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour, IDamageable
     private float moveSpeed = 8f;
     [SerializeField] float jumpingPower = 4f;
     public bool isFacingRight = true;
-    private bool isJumping = false;
+   // private bool isJumping = false;
     private bool isPunching = false;
     private bool isGameOverScreen = false;
     public float dashPower = 20f;
@@ -83,25 +83,25 @@ public class Movement : MonoBehaviour, IDamageable
     }
     
     //jump code stuff
-    void Jump()
-    {
-        if (isDashing)
-        {
-            return;
-        }
+    //void Jump()
+    //{
+    //    if (isDashing)
+    //    {
+    //        return;
+    //    }
         
-        animator.SetTrigger("IsPunching");
-        if (IsGrounded())
-        {
-            print("Grounded: Jump");
-            rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
-            animator.SetBool("IsJumping", true);
-        }
-        else
-        {
-            print("Not Grounded: Cry");
-        }
-    }
+    //    animator.SetTrigger("IsPunching");
+    //    if (IsGrounded())
+    //    {
+    //        print("Grounded: Jump");
+    //        rb.AddForce(Vector2.up * jumpingPower, ForceMode2D.Impulse);
+    //        animator.SetBool("IsJumping", true);
+    //    }
+    //    else
+    //    {
+    //        print("Not Grounded: Cry");
+    //    }
+    //}
     private void Start()
     {
         ResetHealth();
@@ -132,7 +132,7 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.Dash.performed += OnDash;
         PlayerController.Player.Dash.canceled += OnDash;
 
-        PlayerController.Player.Jump.performed += OnJump;
+        //PlayerController.Player.Jump.performed += OnJump;
     }
     private void OnDisable()
     {
@@ -143,7 +143,7 @@ public class Movement : MonoBehaviour, IDamageable
         PlayerController.Player.Dash.performed -= OnDash;
         PlayerController.Player.Dash.canceled -= OnDash;
 
-        PlayerController.Player.Jump.performed -= OnJump;
+        //PlayerController.Player.Jump.performed -= OnJump;
 
         PlayerController.Player.Disable();
     }
@@ -175,11 +175,11 @@ public class Movement : MonoBehaviour, IDamageable
         print($"Input Direction: {input}");
 
     }
-    void OnJump(InputAction.CallbackContext context)
-    {
-        Jump();
-        print("Jumped!");
-    }
+    //void OnJump(InputAction.CallbackContext context)
+    //{
+    //    Jump();
+    //    print("Jumped!");
+    //}
     void OnDash (InputAction.CallbackContext context)
     { 
         if (canDash) StartCoroutine(Dash());
@@ -199,6 +199,8 @@ public class Movement : MonoBehaviour, IDamageable
         _moveDirection = input * moveSpeed;
         rb.linearVelocity = new Vector2(_moveDirection.x, rb.linearVelocity.y);
 
+        rb.linearVelocity = new Vector2(_moveDirection.y, rb.linearVelocity.x);
+
         animator.SetFloat("Speed", Mathf.Abs(input.x != 0 ? input.x : input.y));
         Flip();
     }
@@ -213,7 +215,7 @@ public class Movement : MonoBehaviour, IDamageable
     //collisonstuffcode
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isJumping = false;
+       // isJumping = false;
         animator.SetBool("IsJumping", false);
 
         //if (collision.gameObject.CompareTag("Enemy"))
