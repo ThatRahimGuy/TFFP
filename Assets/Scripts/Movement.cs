@@ -197,9 +197,9 @@ public class Movement : MonoBehaviour, IDamageable
         }
         
         _moveDirection = input * moveSpeed;
-        rb.linearVelocity = new Vector2(_moveDirection.x, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(_moveDirection.x, _moveDirection.y);
 
-        rb.linearVelocity = new Vector2(_moveDirection.y, rb.linearVelocity.x);
+        // rb.linearVelocity = new Vector2(_moveDirection.y, rb.linearVelocity.x);
 
         animator.SetFloat("Speed", Mathf.Abs(input.x != 0 ? input.x : input.y));
         Flip();
