@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d3555c614950a4547b03deea98feb958
+guid: adc84c2228d45124996756a43f667824
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3443765701894598641
-    second: healthbar fill_0
+      213: 5325210538657705591
+    second: floortffp_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: healthbar fill_0
+      name: floortffp_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 63
-        width: 1266
-        height: 406
+        x: 0
+        y: 0
+        width: 1920
+        height: 612
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ffe917f8a6bacf20800000000000000
-      internalID: 3443765701894598641
+      spriteID: 77eebde45c2f6e940800000000000000
+      internalID: 5325210538657705591
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      healthbar fill_0: 3443765701894598641
+      floortffp_0: 5325210538657705591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

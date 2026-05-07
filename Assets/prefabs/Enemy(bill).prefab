@@ -110,6 +110,7 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   _damage: 1
   health: 3
+  rb: {fileID: 0}
 --- !u!50 &7266531667605043784
 Rigidbody2D:
   serializedVersion: 5
@@ -125,7 +126,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

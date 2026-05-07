@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d3555c614950a4547b03deea98feb958
+guid: a08ae4a7eb7e5584aaca22d70bfb2cd9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3443765701894598641
-    second: healthbar fill_0
+      213: 1298108196710839614
+    second: menubutton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: healthbar fill_0
+      name: menubutton_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 63
-        width: 1266
-        height: 406
+        x: 27
+        y: 24
+        width: 446
+        height: 238
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ffe917f8a6bacf20800000000000000
-      internalID: 3443765701894598641
+      spriteID: e35f8f8f68ec30210800000000000000
+      internalID: 1298108196710839614
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      healthbar fill_0: 3443765701894598641
+      menubutton_0: 1298108196710839614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
