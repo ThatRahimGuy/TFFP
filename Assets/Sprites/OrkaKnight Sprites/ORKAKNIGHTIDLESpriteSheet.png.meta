@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 9795d6e6f628d6742a575a6bcee6d539
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4988615332346868926
+    second: ORKAKNIGHTIDLESpriteSheet_0
+  - first:
+      213: 1135956494073313589
+    second: ORKAKNIGHTIDLESpriteSheet_1
+  - first:
+      213: -7035659483506422171
+    second: ORKAKNIGHTIDLESpriteSheet_2
+  - first:
+      213: 5320522883652505650
+    second: ORKAKNIGHTIDLESpriteSheet_3
+  - first:
+      213: -3776416306622225789
+    second: ORKAKNIGHTIDLESpriteSheet_4
+  - first:
+      213: 4709382621114027853
+    second: ORKAKNIGHTIDLESpriteSheet_5
+  - first:
+      213: 267408416837059301
+    second: ORKAKNIGHTIDLESpriteSheet_6
+  - first:
+      213: 5811871745542230692
+    second: ORKAKNIGHTIDLESpriteSheet_7
+  - first:
+      213: 8162537171901457592
+    second: ORKAKNIGHTIDLESpriteSheet_8
+  - first:
+      213: 7532201369105358028
+    second: ORKAKNIGHTIDLESpriteSheet_9
+  - first:
+      213: -6056231489765136786
+    second: ORKAKNIGHTIDLESpriteSheet_10
+  - first:
+      213: 6579956160950631729
+    second: ORKAKNIGHTIDLESpriteSheet_11
+  - first:
+      213: -4485522468467787243
+    second: ORKAKNIGHTIDLESpriteSheet_12
+  - first:
+      213: -8105680636112107460
+    second: ORKAKNIGHTIDLESpriteSheet_13
+  - first:
+      213: -1103775746028802476
+    second: ORKAKNIGHTIDLESpriteSheet_14
+  - first:
+      213: 7484417857120111071
+    second: ORKAKNIGHTIDLESpriteSheet_15
+  - first:
+      213: 3091963910723744897
+    second: ORKAKNIGHTIDLESpriteSheet_16
+  - first:
+      213: 9000588869617291945
+    second: ORKAKNIGHTIDLESpriteSheet_17
+  - first:
+      213: 6603374760816775466
+    second: ORKAKNIGHTIDLESpriteSheet_18
+  - first:
+      213: 3741370804524533730
+    second: ORKAKNIGHTIDLESpriteSheet_19
+  - first:
+      213: 114073276793386413
+    second: ORKAKNIGHTIDLESpriteSheet_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 4485
+        y: 1067
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24bc56a39c0e4cab0800000000000000
+      internalID: -4988615332346868926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 986
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539b98da96ab3cf00800000000000000
+      internalID: 1135956494073313589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 1005
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ecdfce9f05c5e90800000000000000
+      internalID: -7035659483506422171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 986
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230d1739f5b46d940800000000000000
+      internalID: 5320522883652505650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 1005
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3822acf9069779bc0800000000000000
+      internalID: -3776416306622225789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 5166
+        y: 986
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f46e2ea861b5140800000000000000
+      internalID: 4709382621114027853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 5188
+        y: 1005
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2c58fc98606b300800000000000000
+      internalID: 267408416837059301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 5944
+        y: 3
+        width: 1026
+        height: 1029
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a29c295f8ae7a050800000000000000
+      internalID: 5811871745542230692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 7086
+        y: 986
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4ab159f48274170800000000000000
+      internalID: 8162537171901457592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 7108
+        y: 1005
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccc5c36ec31c78860800000000000000
+      internalID: 7532201369105358028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 964
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66a30f1c81f3fba0800000000000000
+      internalID: -6056231489765136786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1318
+        y: 979
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13dfa1b2443b05b50800000000000000
+      internalID: 6579956160950631729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 3221
+        y: 964
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ab1fa841930c1c0800000000000000
+      internalID: -4485522468467787243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 979
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3886cd3866d28f80800000000000000
+      internalID: -8105680636112107460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 5141
+        y: 964
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ee24a9ec99ea0f0800000000000000
+      internalID: -1103775746028802476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 5158
+        y: 979
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd90c3c036efdd760800000000000000
+      internalID: 7484417857120111071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 7061
+        y: 964
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184340d7bccd8ea20800000000000000
+      internalID: 3091963910723744897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 7078
+        y: 979
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a29fd6c3e388ec70800000000000000
+      internalID: 9000588869617291945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 15
+        width: 970
+        height: 820
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a219349db56e3ab50800000000000000
+      internalID: 6603374760816775466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 2120
+        y: 15
+        width: 1010
+        height: 735
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7c3b09ce40ce330800000000000000
+      internalID: 3741370804524533730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ORKAKNIGHTIDLESpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 2
+        width: 1032
+        height: 807
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da572a57a05459100800000000000000
+      internalID: 114073276793386413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ORKAKNIGHTIDLESpriteSheet_0: -4988615332346868926
+      ORKAKNIGHTIDLESpriteSheet_1: 1135956494073313589
+      ORKAKNIGHTIDLESpriteSheet_10: -6056231489765136786
+      ORKAKNIGHTIDLESpriteSheet_11: 6579956160950631729
+      ORKAKNIGHTIDLESpriteSheet_12: -4485522468467787243
+      ORKAKNIGHTIDLESpriteSheet_13: -8105680636112107460
+      ORKAKNIGHTIDLESpriteSheet_14: -1103775746028802476
+      ORKAKNIGHTIDLESpriteSheet_15: 7484417857120111071
+      ORKAKNIGHTIDLESpriteSheet_16: 3091963910723744897
+      ORKAKNIGHTIDLESpriteSheet_17: 9000588869617291945
+      ORKAKNIGHTIDLESpriteSheet_18: 6603374760816775466
+      ORKAKNIGHTIDLESpriteSheet_19: 3741370804524533730
+      ORKAKNIGHTIDLESpriteSheet_2: -7035659483506422171
+      ORKAKNIGHTIDLESpriteSheet_20: 114073276793386413
+      ORKAKNIGHTIDLESpriteSheet_3: 5320522883652505650
+      ORKAKNIGHTIDLESpriteSheet_4: -3776416306622225789
+      ORKAKNIGHTIDLESpriteSheet_5: 4709382621114027853
+      ORKAKNIGHTIDLESpriteSheet_6: 267408416837059301
+      ORKAKNIGHTIDLESpriteSheet_7: 5811871745542230692
+      ORKAKNIGHTIDLESpriteSheet_8: 8162537171901457592
+      ORKAKNIGHTIDLESpriteSheet_9: 7532201369105358028
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

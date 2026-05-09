@@ -39,7 +39,7 @@ public class WaveSpawner : MonoBehaviour
         if (killed == 0)
         {
             spawnrate = 0.1f;
-            enemyCount += 3;
+            enemyCount += 2;
             killed = enemyCount;
             waveCount += 1;
             Debug.Log("waveover");
