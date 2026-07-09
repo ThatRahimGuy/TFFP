@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if(collision.collider.CompareTag("Player"))
         {
             player.GetComponent<Movement>().TakeDamage(1);
+            //blink.Blink();
             Debug.Log("Hello");
         }
     }
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         health -= amount;
         TakeKnockback(player.transform.position);
+        //blink.Blink();
         
         if(health <= 0)
         {

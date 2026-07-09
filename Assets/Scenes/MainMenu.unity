@@ -1415,7 +1415,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -419, y: 9}
-  m_SizeDelta: {x: 633, y: 1051}
+  m_SizeDelta: {x: 674, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066127279
 MonoBehaviour:
@@ -1460,7 +1460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1066127280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1261662899}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1066127280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,7 +1493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6652277689514048415, guid: 21bacd99232b1de4597b882888605374, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 713e47b97cf7e974c973938b68f29a01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2332,8 +2344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: 318}
-  m_SizeDelta: {x: 373, y: 460}
+  m_AnchoredPosition: {x: 55, y: 318}
+  m_SizeDelta: {x: 368, y: 474}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1633292182
 MonoBehaviour:
@@ -2411,7 +2423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9043125348720236875, guid: 3623798ca2450fb4f8e4e2b2be540388, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9729391a279cd204e930b7ae2c4f32ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
