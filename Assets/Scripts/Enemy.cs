@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] int health = 3;
     private WaveSpawner spawner;
     [SerializeField] private Rigidbody2D rb;
+    public AudioClip deathAudio;
 
     private void Start()
     {
@@ -40,15 +41,17 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(int amount)
     {
         health -= amount;
-        TakeKnockback(player.transform.position);
+// TakeKnockback(player.transform.position);
         //blink.Blink();
-        
+
         if(health <= 0)
         {
            enemieskilled += 1;
            spawner.EnemyKilled();
-           Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(deathAudio, transform.position);
+            Destroy(gameObject);
            CameraShakerHandler.Shake(enemydeathshake);
+
         }
         DebugHealth();
     }

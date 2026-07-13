@@ -22,6 +22,7 @@ public class WaveSpawner : MonoBehaviour
     {
         killed = enemyCount;
         StartCoroutine(waveSpawner());
+        waveCountText.text = "Wave Count: " + waveCount;
     }
     void Update()
     {
@@ -42,6 +43,8 @@ public class WaveSpawner : MonoBehaviour
             enemyCount += 2;
             killed = enemyCount;
             waveCount += 1;
+            waveCountText.text = "Wave Count: " + waveCount;
+
             Debug.Log("waveover");
             StartCoroutine(waveSpawner());
         }

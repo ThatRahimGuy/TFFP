@@ -48,6 +48,9 @@ public class Movement : MonoBehaviour, IDamageable
     public int Health { get; set; }
     public int InitialHealth;
 
+    private AudioSource audio;
+    public AudioClip punch;
+
 //yyutyutyutyutyt
 
     //punch code stuff(yay)
@@ -110,6 +113,7 @@ public class Movement : MonoBehaviour, IDamageable
         gameOver.SetActive(false);
         source = GetComponent<AudioSource>();
         healthitem.OnHealthCollect += HealDamage;
+        audio = GetComponent<AudioSource>();
     }
 
 
@@ -154,6 +158,8 @@ public class Movement : MonoBehaviour, IDamageable
         _damage =  1;
         Punch();
         animator.SetTrigger("IsPunching");
+        audio.clip = punch;
+        audio.Play();
         CameraShakerHandler.Shake(punchshake);
     }
 

@@ -8,6 +8,12 @@ public class healthitem : MonoBehaviour
 {
     public int healAmount = 1;
     public static event Action<int> OnHealthCollect;
+    public AudioClip pickupAudio;
+
+    private void Start()
+    {
+        
+    }
     public void Collect()
     {
         OnHealthCollect?.Invoke(healAmount);
@@ -16,6 +22,11 @@ public class healthitem : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player")) Collect();
+        if (collider.CompareTag("Player"))
+        {
+            Collect();
+            AudioSource.PlayClipAtPoint(pickupAudio, transform.position);
+        }
+
     }
 }
