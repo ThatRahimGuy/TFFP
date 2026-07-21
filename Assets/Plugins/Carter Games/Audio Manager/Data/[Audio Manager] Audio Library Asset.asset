@@ -71,25 +71,6 @@ MonoBehaviour:
         metaData:
           category: 
           tags: []
-    - key: OKTFFP Track 2-30b0803b-0ac4-47ce-8e90-8e7ed639faec
-      value:
-        key: OKTFFP Track 2
-        id: OKTFFP Track 2-30b0803b-0ac4-47ce-8e90-8e7ed639faec
-        defaultKey: OKTFFP Track 2-30b0803b-0ac4-47ce-8e90-8e7ed639faec
-        value: {fileID: 8300000, guid: 5bc85c45720ad664e9bbea9d8f1d7101, type: 3}
-        path: Assets/SFX/OKTFFP Track 2.wav
-        dynamicStartTime:
-          time: 0
-          threshold: 0
-          option: 1
-          tabPos: 1
-        defaultSettings:
-          volume: 1
-          pitch: 1
-        showDynamicTime: 0
-        metaData:
-          category: 
-          tags: []
     - key: UI Confirm SFX OKI-3d4440ff-6cc6-48ac-bb35-e72e3d086054
       value:
         key: UI Confirm SFX OKI
