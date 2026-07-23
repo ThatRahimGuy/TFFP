@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
     public TextMeshProUGUI waveCountText;
     int waveCount = 1;
     public float spawnrate = 1.0f;
-    public float timeBetweenWaves = 3.0f;
+    public float timeBetweenWaves = 6.0f;
     
     public int enemyCount;
     private int killed;
