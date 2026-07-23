@@ -24,6 +24,16 @@ public class Buttons : MonoBehaviour
        // AudioManager.instance.UiSFX();
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("CreditsScreen");
+    }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void UpdateMusicVolume(float volume)
     {
         audioMixer.SetFloat("MusicVolume", volume);

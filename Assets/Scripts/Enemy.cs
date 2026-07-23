@@ -1,4 +1,6 @@
 using FirstGearGames.SmoothCameraShaker;
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -13,6 +15,10 @@ public class Enemy : MonoBehaviour, IDamageable
     public int Health { get; set; }
     public int InitialHealth { get; set; }
     public Movement playerHealth;
+    Animator animator;
+    //LootTable
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
     [SerializeField] int _damage = 1;
     [SerializeField] int health = 3;
@@ -52,8 +58,24 @@ public class Enemy : MonoBehaviour, IDamageable
             Destroy(gameObject);
            CameraShakerHandler.Shake(enemydeathshake);
 
+            foreach (LootItem lootItem in lootTable)
+            {
+                if(Random.Range(0f,100f) <= lootItem.dropChance)
+                {
+                    InstantiateLoot(lootItem.itemPrefab);
+                    break;
+                }
+            }
         }
         DebugHealth();
+    }
+
+    void InstantiateLoot(GameObject loot)
+    {
+        if (loot)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
     }
 
     public void HealDamage(int amount)

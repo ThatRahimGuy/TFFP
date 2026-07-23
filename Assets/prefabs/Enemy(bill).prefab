@@ -109,8 +109,10 @@ MonoBehaviour:
   enemieskilled: 0
   enemydeathshake: {fileID: 11400000, guid: 10de23da347675f4eaf61c82de5f1529, type: 2}
   playerHealth: {fileID: 0}
+  lootTable:
+  - {fileID: 0}
   _damage: 1
-  health: 3
+  health: 2
   rb: {fileID: 0}
   deathAudio: {fileID: 8300000, guid: e77da79a3ca543942940c7c668390635, type: 3}
 --- !u!50 &7266531667605043784
@@ -178,7 +180,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.58, y: 1.66}
+    oldSize: {x: 4.68, y: 2.63}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -797,7 +797,7 @@ Transform:
   m_GameObject: {fileID: 972042035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.88, y: -3.72, z: -0.017351573}
+  m_LocalPosition: {x: -0.19, y: -4.49, z: -0.017351573}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1591,6 +1591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 3892854424282695623, guid: 0eda8ccc5da847649990ae58f3d3afbb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4105753576550922858, guid: 0eda8ccc5da847649990ae58f3d3afbb, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1713,14 +1717,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471166723581742806, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5661764012060722495, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 1351575815}
     - target: {fileID: 5661764012060722495, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: dashPower
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661764012060722495, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: dashCooldown
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661764012060722495, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 589556249}
+    - target: {fileID: 5661764012060722495, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
+      propertyPath: heavyPunchDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7064850037202885726, guid: cf209b5e0c459ab49aa0d62fcead6fc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.48
@@ -1872,11 +1928,11 @@ PrefabInstance:
       objectReference: {fileID: 972042036}
     - target: {fileID: 2970106786956953736, guid: 4a0d619baeae3294cb51cb2dcc90d63d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2970106786956953736, guid: 4a0d619baeae3294cb51cb2dcc90d63d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5411439834978800714, guid: 4a0d619baeae3294cb51cb2dcc90d63d, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1897,6 +1953,10 @@ PrefabInstance:
     - target: {fileID: 8914709401613556193, guid: 4a0d619baeae3294cb51cb2dcc90d63d, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914709401613556193, guid: 4a0d619baeae3294cb51cb2dcc90d63d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
