@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public int InitialHealth { get; set; }
     public Movement playerHealth;
     Animator animator;
+    SpriteRenderer sr;
     //LootTable
     [Header("Loot")]
     public List<LootItem> lootTable = new List<LootItem>();
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
         spawner = FindAnyObjectByType<WaveSpawner>();
         rb =  GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -112,6 +114,7 @@ public class Enemy : MonoBehaviour, IDamageable
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        FacePlayer();
         //if (distance < 5)
         //{
         //    transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
@@ -121,5 +124,13 @@ public class Enemy : MonoBehaviour, IDamageable
         //{
         //    waveSpawner.WaveDone();
         //}
+    }
+
+    private void FacePlayer()
+    {
+        float xDiff = player.transform.position.x - transform.position.x;
+        if (xDiff > 0) sr.flipX = false;
+        else sr.flipX = true;
+        
     }
 }

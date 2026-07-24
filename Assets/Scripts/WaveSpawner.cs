@@ -61,7 +61,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < enemyCount; i++)
         {
-            GameObject enemyClone = Instantiate(enemy, spawnpoint.position + new Vector3(1f*i, 0, 0), Quaternion.identity);
+            GameObject enemyClone = Instantiate(enemy, spawnpoint.position, Quaternion.identity);
 
             yield return new WaitForSeconds(spawnrate);
         }

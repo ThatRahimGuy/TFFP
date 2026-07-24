@@ -147,6 +147,63 @@ MonoBehaviour:
         metaData:
           category: 
           tags: []
+    - key: OKTrackThree-4ff255f0-f6af-4563-8d25-54e28daeffc9
+      value:
+        key: OKTrackThree
+        id: OKTrackThree-4ff255f0-f6af-4563-8d25-54e28daeffc9
+        defaultKey: OKTrackThree-4ff255f0-f6af-4563-8d25-54e28daeffc9
+        value: {fileID: 8300000, guid: a11de61de45a23b49b65ba9c5c53ee45, type: 3}
+        path: Assets/SFX/OKTrackThree.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: OKTrackOne-7db6e5de-17a2-4246-869a-4ca4046e7e0d
+      value:
+        key: OKTrackOne
+        id: OKTrackOne-7db6e5de-17a2-4246-869a-4ca4046e7e0d
+        defaultKey: OKTrackOne-7db6e5de-17a2-4246-869a-4ca4046e7e0d
+        value: {fileID: 8300000, guid: 418f0fab79da0b24eaa4920aca8a1d61, type: 3}
+        path: Assets/SFX/OKTrackOne.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
+    - key: TrackTwoWip-88d170b8-bc0f-4a9b-a535-a6c7f29e142a
+      value:
+        key: TrackTwoWip
+        id: TrackTwoWip-88d170b8-bc0f-4a9b-a535-a6c7f29e142a
+        defaultKey: TrackTwoWip-88d170b8-bc0f-4a9b-a535-a6c7f29e142a
+        value: {fileID: 8300000, guid: c74f52a80b0f22a4ea804d47f0ced8f0, type: 3}
+        path: Assets/SFX/TrackTwoWip.wav
+        dynamicStartTime:
+          time: 0
+          threshold: 0
+          option: 1
+          tabPos: 1
+        defaultSettings:
+          volume: 1
+          pitch: 1
+        showDynamicTime: 0
+        metaData:
+          category: 
+          tags: []
   groups:
     list: []
   mixers:

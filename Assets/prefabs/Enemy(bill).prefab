@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7266531667605043784}
   - component: {fileID: 3923279647144497416}
   - component: {fileID: -1616031405812913861}
+  - component: {fileID: 8172309897998593689}
   m_Layer: 6
   m_Name: Enemy(bill)
   m_TagString: Enemy
@@ -110,7 +111,7 @@ MonoBehaviour:
   enemydeathshake: {fileID: 11400000, guid: 10de23da347675f4eaf61c82de5f1529, type: 2}
   playerHealth: {fileID: 0}
   lootTable:
-  - {fileID: 0}
+  - {fileID: 8172309897998593689}
   _damage: 1
   health: 2
   rb: {fileID: 0}
@@ -210,3 +211,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8172309897998593689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5135551132390879565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e5c3a8ecb59754bbea921be5b11a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 3194186060074806520, guid: 4a128eaf7fd08cf498e81b0fe57a589e, type: 3}
+  dropChance: 75
